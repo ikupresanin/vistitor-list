@@ -1,0 +1,38 @@
+@import "src/assets/scss/media-queries";
+
+:host {
+  width: 100%;
+}
+.list-wrapper {
+  .list-actions {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    .title {
+      font-size: 3rem;
+      @include tablet {
+        font-size: 4rem;
+      }
+    }
+    margin-bottom: 3.2rem;
+  }
+  .visitor-list {
+    height: 50rem;
+    max-height: 80rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    .list-item {
+      display: flex;
+    }
+  }
+  .no-data-info {
+    height: 30rem;
+    display: flex;
+    font-size: 2rem;
+    text-align: left;
+    justify-content: center;
+    font-family: Montserrat-Light;
+    padding-top: 6rem;
+  }
+}

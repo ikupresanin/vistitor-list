@@ -1,0 +1,22 @@
+<div class="input-wrapper">
+  <label class="input-label">First name:</label>
+  <span (click)="toggleMode()" *ngIf="!editMode">{{firstName.value}}</span>
+  <input class="form-input" *ngIf="editMode" [formControl]="firstName">
+  <div *ngIf="firstName.touched && firstName.hasError('required')" class="input-error">This field is required</div>
+</div>
+<div class="input-wrapper">
+  <label class="input-label">Last name:</label>
+  <span (click)="toggleMode()" *ngIf="!editMode">{{lastName.value}}</span>
+  <input class="form-input" *ngIf="editMode" [formControl]="lastName">
+  <div *ngIf="lastName.touched && lastName.hasError('required')" class="input-error">This field is required</div>
+</div>
+<div class="input-wrapper">
+  <label class="input-label">Email:</label>
+  <span (click)="toggleMode()" *ngIf="!editMode">{{email.value}}</span>
+  <input class="form-input" *ngIf="editMode" [formControl]="email">
+  <div *ngIf="email.touched && !email.hasError('required') && email.hasError('email')" class="input-error">Please enter a valid email</div>
+  <div *ngIf="email.touched && email.hasError('required')" class="input-error">This field is required</div>
+</div>
+<button *ngIf="editMode" class="button action-button" (click)="saveVisitor()">Save</button>
+<button *ngIf="!editMode" class="button action-button delete" (click)="onDelete()">Delete</button>
+

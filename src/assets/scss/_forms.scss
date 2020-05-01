@@ -1,0 +1,63 @@
+@import 'src/assets/scss/media-queries';
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  @include small {
+    &:not(:last-child) {
+      margin-right: 1.6rem;
+    }
+    width: 14rem;
+
+  }
+  @include tablet {
+    &:not(:last-child) {
+      margin-right: 1.6rem;
+    }
+    width: 18rem;
+
+  }
+  @include desktop {
+    &:not(:last-child) {
+      margin-right: 1.6rem;
+    }
+    width: 22rem;
+
+  }
+  @include large {
+    width: 18rem;
+  }
+  margin-top: 1.6rem;
+  .input-label {
+    text-align: left;
+    font-size: 1rem;
+    color: $dark-grey;
+    margin-bottom: 0.8rem;
+  }
+  .form-input {
+    width: 100%;
+    background-color: $white;
+    box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.06);
+    font-size: 1.6rem;
+    line-height: 1.5rem;
+    border-width: 0;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    background: #f7f7f7;
+    outline: 0;
+    width: 100%;
+    &.ng-invalid.ng-touched {
+      border: 0.1rem solid $red !important;
+      background: lighten($red, 35%) !important;
+    }
+  }
+}
+.input-error {
+  position: absolute;
+  font-size: 1rem;
+  color: $red;
+  text-align: left;
+  bottom: -1.6rem;
+}

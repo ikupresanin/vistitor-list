@@ -1,0 +1,28 @@
+<div class="list-wrapper">
+  <div class="box">
+    <div class="box-content">
+      <div class="list-actions">
+        <h2 class="title">Visitor list</h2>
+        <button [disabled]="addButtonDisabled" (click)="addVisitor()" class="button" [ngClass]="{'disabled': addButtonDisabled}">
+          + Add visitor
+        </button>
+      </div>
+      <ul *ngIf="visitorsForm; else addTemplate" class="visitor-list">
+        <li class="list-item" @fadeIn @fadeOut *ngFor="let control of visitors.controls; let i = index" [formGroup]="visitorsForm">
+            <app-visitor
+            [control]=getFormControl(i)
+            (delete)=deleteVisitor(i)>
+            </app-visitor>
+        </li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+<ng-template #addTemplate>
+  <p class="no-data-info">
+    No visitors to display.
+  <br/>
+    Click the Add new button to add a new visitor
+  </p>
+</ng-template>

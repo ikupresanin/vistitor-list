@@ -1,0 +1,19 @@
+@import 'src/assets/scss/variables.scss';
+
+
+.header-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primary-color;
+  height: 7.5rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1001;
+  .logo {
+    width: 7rem;
+    margin-left: 1.3rem;
+  }
+}
